@@ -46,8 +46,8 @@
             filePath = "Machine_Test_TeamleaseRegTech/Screens/Employee Details/EmployeeDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "buttonLogOutPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>

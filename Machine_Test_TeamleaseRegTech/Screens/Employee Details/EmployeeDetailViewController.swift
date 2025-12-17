@@ -104,19 +104,28 @@ class EmployeeDetailViewController: UIViewController {
     
     @IBAction func buttonSavePressed(_ sender: Any) {
         guard
-            let name = textFieldEmployeeName.text, !name.isEmpty,
-            let salary = textFieldEmployeeSalary.text, !salary.isEmpty
-        else {
-            showAlert(message: "Please enter valid details")
-            return
-        }
-        
-        employeeDetail?.employeeName = name
-        employeeDetail?.employeeSalary = salary
-        
-        CoreDataManager.shared.saveContext()
-        
-        showAlert(message: "Employee details updated successfully")
+                let name = textFieldEmployeeName.text, !name.isEmpty,
+                let ageText = textFieldEmployeeAge.text, !ageText.isEmpty,
+                let salary = textFieldEmployeeSalary.text, !salary.isEmpty,
+                let age = Int(ageText)
+            else {
+                showAlert(message: "Please enter valid details")
+                return
+            }
+            
+            // Check if age is greater than 50
+            if age > 50 {
+                showAlert(message: "Age cannot be greater than 50")
+                return
+            }
+            
+            employeeDetail?.employeeName = name
+            employeeDetail?.employeeAge = ageText
+            employeeDetail?.employeeSalary = salary
+            
+            CoreDataManager.shared.saveContext()
+            
+            showAlert(message: "Employee details updated successfully")
     }
     
     private func showAlert(message: String) {
